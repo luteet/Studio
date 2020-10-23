@@ -166,7 +166,7 @@ $(function () {
         classToHide: 'hide',
         distanceHide: 300,
         distanceShow: 100,
-        ifHeaderTop: ['top', 0],
+        ifHeaderTop: ['top', 50],
         classAnchorForTop: true,
         loaded: 'loaded'
     });
