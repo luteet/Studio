@@ -11,19 +11,19 @@ $(function () {
     }
 
     ThisIsWebP().then(function () {
-        $.each($(lazyBg), function() {
+        $.each($(lazyBg), function () {
             $(lazyBg).removeAttr('data-src-not-webp');
             console.log("E")
         })
         $(lazyBg).lazy({
-            afterLoad: function(e) {
+            afterLoad: function (e) {
                 $(e).addClass('loaded');
             }
         })
-        
-        
+
+
     }, function () {
-        $.each($(lazyBg), function() {
+        $.each($(lazyBg), function () {
             $(this).attr('data-src', $(this).data('src-not-webp')).removeAttr('data-src-not-webp');
         })
         $(lazyBg).lazy()
@@ -114,11 +114,11 @@ $(function () {
             });
         }
         imgLazyActive()
-        if(typeof settings.loaded == 'string') {
+        if (typeof settings.loaded == 'string') {
             let classLoaded = settings.loaded;
             $(header).addClass(classLoaded);
         }
-        else if(settings.loaded == true && typeof settings.loaded == 'boolean') {
+        else if (settings.loaded == true && typeof settings.loaded == 'boolean') {
             $(header).addClass('loaded');
         }
         $('header')
@@ -172,7 +172,11 @@ $(function () {
     });
 
 
-    
+    $('[data-placeholder]').focus(function () {
+        $(this).attr('placeholder', '');
+    }).blur(function () {
+        $(this).attr('placeholder', $(this).data('placeholder'));
+    });
 
 
 });
