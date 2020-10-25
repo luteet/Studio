@@ -247,7 +247,7 @@ $(function () {
         else if (settings.loaded == true && typeof settings.loaded == 'boolean') {
             $(header).addClass('loaded');
         }
-        $('header')
+        //$('header')
         $(window).scroll(function () {
             scrolled = $(window).scrollTop();
             if (scrolled == 0) {
@@ -304,5 +304,14 @@ $(function () {
         $(this).attr('placeholder', $(this).data('placeholder'));
     });
 
+    
+    $(window).on('popstate', function(e) {
+        if($('.burger, .header__nav--menu').hasClass('active')) {
+            e.preventDefault()
+            history.go(1);
+            $('.burger, .header__nav--menu').toggleClass('active');
+        }
+        
+    });
 
 });
