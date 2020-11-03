@@ -1,7 +1,17 @@
 $(function () {
 
-
-
+    $.each($('.blog__comments--value'), function() {
+        if(Number($(this).data('comment-value')) == 1) {
+            $(this).html('' + $(this).data('comment-value') + ' ' + $(this).data('comment-word') + '');
+        }
+        else if (Number($(this).data('comment-value')) >= 2 && Number($(this).data('comment-value')) <= 4) {
+            $(this).html('' + $(this).data('comment-value') + ' ' + $(this).data('comment-2-4-word') + '');
+        }
+        else {
+            $(this).html('' + $(this).data('comment-value') + ' ' + $(this).data('comment-some-word') + '');
+        }
+    });
+    
 
     var supportedWebpCheck, lazyBg = '.lazy-bg';
 
