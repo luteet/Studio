@@ -13,7 +13,7 @@ $(function () {
     });
     
 
-    var supportedWebpCheck, lazyBg = '.lazy-bg';
+    var lazyBg = '.lazy-bg';
 
     function ThisIsWebP() {
         var def = $.Deferred(), crimg = new Image();
@@ -47,8 +47,7 @@ $(function () {
     $('.services__slider--img-active').on('load', function () {
         $(this).css('opacity', '1');
     })
-    var imageViewSliderCheck = false;
-    let elemForView;
+    var imageViewSliderCheck = false, elemForView;
     function imageViewSlider(e) {
         elemForView = $(e);
         if (imageViewSliderCheck == false && $(window).width() > 525) {
