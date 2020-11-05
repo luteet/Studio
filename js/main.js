@@ -149,15 +149,13 @@ $(function () {
     let lazyImgCheck, lazyElemSlider = $('.slick-active').find('.slider-image'), supportedWebp = undefined;
 
         function imgLazyActive(e) {
-            
-            lazyElemSlider = $('.slick-active').find('.slider-image')
             lazyImgCheck = $(e).offset().top + $(window).height() + 200;
             $.each($('.slick-active .slider-image'), function () {
                 
                 if (lazyImgCheck >= $(this).offset().top && !$(this).hasClass('loaded')) {
-                    console.log('active')        
+                    
                     if(supportedWebp == true) {
-                        console.log('active2')
+                        
                         $(this).parent().find('[data-srcset]').attr('srcset', $(this).parent().find('[data-srcset]').data('srcset'));
                         $('.slider-image').on('load', function () {
                             $(this).addClass('loaded');
@@ -170,10 +168,6 @@ $(function () {
                             $(this).addClass('loaded');
                         })
                     }
-                }
-                if ($('.slick-active .slider-image .loaded').length == $('.slick-active .img-lazy-load').length) {
-                    //console.log($('.slick-active .slider-image.loaded').length + ' ' + $('.slick-active .img-lazy-load').length);
-                    //return false
                 }
             });
         }
@@ -276,40 +270,11 @@ $(function () {
                 $('.services__slider--list, .reviews__slider').on('afterChange', function () {
                     lazyLoadSliderImg($(this))
                 });
-
-
-
             });
-
         }
-
-
     });
     sliderBtnTab[1].click();
 
-
-
-
-
-    /* $('.services__slider--item').hover(function () {
-        console.log('hover');
-        if($('html').hasClass('desktop') && !$(this).hasClass('active')) {
-            imageViewSlider($(this))
-            $('.services__slider--item').removeClass('active')
-            $(this).addClass('active')
-        }
-    }, function () {
-    
-    }); */
-
-
-
-    $('.btn').hover(function () {
-        $(this).removeClass('off-hover').addClass('on-hover')
-    },
-        function () {
-            $(this).removeClass('on-hover').addClass('off-hover')
-        });
 
     $('.burger').on('click', function () {
         $('.burger, .header__nav--menu').toggleClass('active');
@@ -326,6 +291,7 @@ $(function () {
             if ($('.header__nav--menu').hasClass('anim-effect')) {
                 $('.header__nav--menu').removeClass('anim-effect')
             }
+            $('.burger, .header__nav--menu').removeClass('active');
         }
 
     }
