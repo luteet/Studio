@@ -145,7 +145,7 @@ $(function () {
     })
     var sliderBtnTab = $('.services__nav--tab');
 
-    let lazyImgCheck, lazyElemSlider = $('.slick-active').find('.slider-image'), supportedWebp = undefined;
+    let lazyImgCheck, supportedWebp = undefined;
 
         function imgLazyActive(e) {
             lazyImgCheck = $(e).offset().top + $(window).height() + 200;
