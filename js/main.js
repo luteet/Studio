@@ -394,7 +394,7 @@ $(function () {
         distanceShow: 100,
         ifHeaderTop: ['top', 0],
         classAnchorForTop: true,
-        loaded: 'loaded'
+        //loaded: 'loaded'
     });
 
 
