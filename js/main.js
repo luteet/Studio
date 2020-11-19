@@ -425,13 +425,13 @@ $(function () {
           scrollElem = $(scrollName),
           scrollTop = scrollElem.offset().top;
   
-        if ($('.header').offset().top > scrollTop + 300) {
+        /* if ($('.header').offset().top > scrollTop + 300) {
           scrollTop = scrollTop - $('.header').height() - 10;
         }
         else if ($('.header').offset().top < scrollTop && scrollTop - $('.header').offset().top <= 300) {
           scrollTop = scrollTop - $('.header').height() - 10;
   
-        }
+        } */
   
         if ($(this).hasClass('btn-scroll-last')) {
           scrollTop = $(document).height() - $(window).height();
